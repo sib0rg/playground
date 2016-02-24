@@ -1,0 +1,25 @@
+@mixin genCols() {
+
+	$i : 1;
+	$columns: 12;
+
+	@for $i from 1 through $columns {
+		.col-#{$i} {
+			width: ((100/$columns) * $i) * 1%;
+		}
+	}
+}
+
+.grid-container {
+
+	.row {
+		width:100%;
+	}
+
+	div[class^="col-"] {
+		float:left;
+
+	}
+
+	@include genCols();
+}

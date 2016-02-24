@@ -1,0 +1,47 @@
+<html ng-app="myApp">
+<head>
+	<link rel="stylesheet" href="styles/main.css" />
+	<style>
+
+		img.selected {
+			border:1px solid red;
+		}
+
+	</style>
+</head>
+
+<body ng-controller="theController as vm">
+
+
+<div class="flickr-photos">
+	<div class="flickr-photo" ng-repeat="photo in vm.photos">
+		<img ng-class="{'selected':photo.selected}" ng-click="vm.selectPhoto(photo)" src="{{photo.media.m}}" />
+		{{photo.selected}}
+	</div>
+</div>
+
+<div class="grid-container">
+	<div class="row">
+		<div class="col-12">
+			<img src="" />
+			<h1>Ipsum lorem</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<ul class="menu"></ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-10">2</div>
+		<div class="col-2">1</div>
+	</div>
+
+</div>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

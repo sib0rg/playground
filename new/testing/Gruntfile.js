@@ -1,5 +1,3 @@
-var modRewrite = require('connect-modrewrite');
-
 module.exports = function(grunt){
 
 	grunt.initConfig({
@@ -44,15 +42,15 @@ module.exports = function(grunt){
 					port:1337,
 					hostname: '*',
 					base: 'dist',
-					livereload: true			
+					livereload: true				
 				}
 			}
 		},
 
 		watch: {
 			files: 'app/**/*',
-			tasks: ['copy:main','concat','sass'],
-			//tasks: ['sass'],
+			//tasks: ['copy:main','concat','sass'],
+			tasks: ['sass'],
 			options: {
 				livereload: true
 			}
@@ -61,7 +59,7 @@ module.exports = function(grunt){
 		concat: {
 			basic_and_extras: {
 				files: {
-					'dist/vendor.js' : ['bower_components/angular/angular.js', 'bower_components/angular-route/angular-route.js'],
+					'dist/vendor.js' : 'bower_components/angular/angular.js',
 					'dist/modules.js' : ['app/*.js','app/modules/**/*.js']
 				}
 			}

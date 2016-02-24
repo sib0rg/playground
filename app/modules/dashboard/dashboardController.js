@@ -1,7 +1,7 @@
 (function(){
 	'use strict';	
 
-	angular.module('myApp.dashboard',[])
+	angular.module('myApp.dashboard')
 	.controller('dashboardController', dashboardController);
 
 	//dashboardController.$inject[];
